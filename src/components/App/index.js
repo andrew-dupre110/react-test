@@ -17,7 +17,10 @@ const App = () => {
     <Router>
       <AppWrapper>
         <Switch>
-          <Route path="/create" component={Create} />
+          <Route
+            path={["/employee/create", "/employee/edit/:employeeId"]}
+            component={Create}
+          />
           <Route path="/view" component={View} />
           <Route path="/" component={Overview} />
         </Switch>

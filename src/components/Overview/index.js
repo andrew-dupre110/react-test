@@ -17,7 +17,7 @@ const Overview = () => {
         <Box marginBottom="lg">
           <Button
             data-cy="newEmployeeButton"
-            onClick={() => history.push("/create")}
+            onClick={() => history.push(`/employee/create`)}
           >
             Add new employees
           </Button>

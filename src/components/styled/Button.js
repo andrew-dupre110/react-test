@@ -7,6 +7,7 @@ const Button = styled.button`
   ${padding};
   ${state};
 
+  cursor: pointer;
   text-align: center;
   height: 33px;
   background-color: ${({ backgroundColor = "background" }) =>

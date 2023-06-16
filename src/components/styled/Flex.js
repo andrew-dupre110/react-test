@@ -12,4 +12,5 @@ export default styled.div`
 
   display: flex;
   min-width: 0;
+  gap: ${({ gap }) => gap};
 `;

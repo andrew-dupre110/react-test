@@ -8,14 +8,19 @@ const FormButtons = () => {
   const history = useHistory();
 
   return (
-    <Flex justifyContent="center">
+    <Flex justifyContent="center" gap="4rem">
       <Box marginRight="sm">
         <Button data-cy="backButton" onClick={() => history.goBack()}>
           Back
         </Button>
       </Box>
       <Box>
-        <Button data-cy="saveButton" onClick={handleSubmit} type="submit">
+        <Button
+          data-cy="saveButton"
+          onClick={handleSubmit}
+          type="submit"
+          backgroundColor="success"
+        >
           Save
         </Button>
       </Box>
