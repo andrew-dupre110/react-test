@@ -18,7 +18,7 @@ const formValidationSchema = yup.object().shape({
     .email("Invalid email address")
     .required("Required"),
   birthDate: yup.date().required("Required"),
-  status: yup.string().required("Required"),
+  status: yup.string().trim().required("Required"),
   jobTitle: yup
     .string()
     .trim()

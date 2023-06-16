@@ -29,9 +29,27 @@ const employeeSlice = createSlice({
         ];
       },
     },
+    deleteEmployee: {
+      reducer(draftState, action) {
+        draftState.employees_records = draftState.employees_records.filter(
+          item => item.id !== action.payload
+        );
+      },
+    },
+    updateEmployee: {
+      reducer(draftState, action) {
+        draftState.employees_records = [
+          ...draftState.employees_records.filter(
+            item => String(item.id) !== action.payload.employeeId
+          ),
+          action.payload.employee,
+        ];
+      },
+    },
   },
 });
 
-export const { saveNewEmployee } = employeeSlice.actions;
+export const { saveNewEmployee, deleteEmployee, updateEmployee } =
+  employeeSlice.actions;
 
 export default employeeSlice.reducer;
