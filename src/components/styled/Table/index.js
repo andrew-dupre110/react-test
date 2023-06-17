@@ -33,7 +33,8 @@ const StyledTable = styled.table`
   th {
     border: none;
     border-bottom: 1px solid ${theme.colors.lightGray};
-    width: minmax(150px);
+    min-width: 150px;
+    max-width: 150px;
   }
 
   td {

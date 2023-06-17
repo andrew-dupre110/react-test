@@ -21,6 +21,11 @@ const PaginationContainer = styled.div`
 
   button {
     cursor: pointer;
+    width: 40px;
+  }
+
+  button:disabled {
+    cursor: unset;
   }
 `;
 
@@ -41,6 +46,13 @@ const NumberButton = styled.button`
     text-decoration: underline;
     color: ${theme.colors.primary};
   }
+`;
+
+const PageSizes = styled.select`
+  background: #fff;
+  border: 1px solid lightgrey;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
 `;
 
 const Pagination = ({
@@ -116,13 +128,13 @@ const Pagination = ({
         </li>
         {pageSizes && (
           <li>
-            <select onChange={changeRecordsPerPage}>
+            <PageSizes onChange={changeRecordsPerPage}>
               {pageSizes.map(pageSize => (
                 <option key={pageSize} value={pageSize}>
                   {pageSize}
                 </option>
               ))}
-            </select>
+            </PageSizes>
           </li>
         )}
       </ul>
