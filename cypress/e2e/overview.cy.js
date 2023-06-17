@@ -17,7 +17,7 @@ describe("Examine overview content and functionality", () => {
 
   it("navigates correctly when clicking on the buttons", () => {
     cy.get("[data-cy=newEmployeeButton]").click();
-    cy.url().should("eq", "http://localhost:3000/#/create");
+    cy.url().should("eq", "http://localhost:3000/#/employee/create");
 
     cy.get("[data-cy=backButton]").click();
     cy.url().should("eq", "http://localhost:3000/#/");
