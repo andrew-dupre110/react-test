@@ -31,9 +31,7 @@ const COLUMNS = ({ STATUS_COLORS, dispatch }) => [
     label: "Status",
     dataIndex: "status",
     render: ({ status }) => (
-      <Flex direction="column" alignItems="center">
-        <Tag backgroundColor={STATUS_COLORS[status]}>{status}</Tag>
-      </Flex>
+      <Tag backgroundColor={STATUS_COLORS[status]}>{status}</Tag>
     ),
   },
   {
