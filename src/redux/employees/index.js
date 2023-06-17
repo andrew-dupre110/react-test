@@ -38,12 +38,13 @@ const employeeSlice = createSlice({
     },
     updateEmployee: {
       reducer(draftState, action) {
-        draftState.employees_records = [
-          ...draftState.employees_records.filter(
-            item => String(item.id) !== action.payload.employeeId
-          ),
-          action.payload.employee,
-        ];
+        const index = draftState.employees_records.indexOf(
+          draftState.employees_records.find(
+            item => String(item.id) === action.payload.employeeId
+          )
+        );
+
+        draftState.employees_records[index] = action.payload.employee;
       },
     },
   },
