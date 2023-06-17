@@ -7,9 +7,9 @@ const StyledTable = styled.table`
   width: 80vw;
   border-radius: 12px;
   margin: ${theme.spacings["2xl"]} 0;
-  -webkit-box-shadow: -1px 3px 15px 0px ${theme.colors.primary};
-  -moz-box-shadow: -1px 3px 15px 0px ${theme.colors.primary};
-  box-shadow: -1px 3px 15px 0px ${theme.colors.primary};
+  box-shadow: -1px 10px 19px -6px rgba(0, 0, 0, 0.71);
+  -webkit-box-shadow: -1px 10px 19px -6px rgba(0, 0, 0, 0.71);
+  -moz-box-shadow: -1px 10px 19px -6px rgba(0, 0, 0, 0.71);
   th {
     font-size: ${theme.textSizes.lg};
     color: ${theme.colors.secondaryTextColor};
@@ -62,10 +62,15 @@ const Table = ({ columns, data }) => (
           ))}
         </tr>
       )}
-      {data.map(row => (
+      {data.map((row, rowIndex) => (
         <tr key={row.id}>
           {columns.map((dataColumn, dataColumnIndex) => (
-            <td key={dataColumnIndex}>
+            <td
+              key={dataColumnIndex}
+              style={{
+                borderBottom: `${rowIndex === data.length - 1 && "none"} `,
+              }}
+            >
               {dataColumn.render
                 ? dataColumn.render(row)
                 : row[dataColumn.dataIndex]}
