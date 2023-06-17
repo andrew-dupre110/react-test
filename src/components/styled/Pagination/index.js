@@ -43,9 +43,13 @@ const NumberButton = styled.button`
   }
 `;
 
-const Pagination = ({ pagination, setPagination, listToatal = 0 }) => {
+const Pagination = ({
+  pagination,
+  setPagination,
+  listToatal = 0,
+  pageSizes,
+}) => {
   const { currentPage, recordsPerPage } = pagination;
-  const pageSizes = [5, 15, 25];
   const numberOfPages = Math.ceil(listToatal / recordsPerPage);
   const numbersList = [...Array(numberOfPages).keys()]
     .slice(item => item.length)
@@ -110,15 +114,17 @@ const Pagination = ({ pagination, setPagination, listToatal = 0 }) => {
             <GrFormNext />
           </button>
         </li>
-        <li>
-          <select onChange={changeRecordsPerPage}>
-            {pageSizes.map(pageSize => (
-              <option key={pageSize} value={pageSize}>
-                {pageSize}
-              </option>
-            ))}
-          </select>
-        </li>
+        {pageSizes && (
+          <li>
+            <select onChange={changeRecordsPerPage}>
+              {pageSizes.map(pageSize => (
+                <option key={pageSize} value={pageSize}>
+                  {pageSize}
+                </option>
+              ))}
+            </select>
+          </li>
+        )}
       </ul>
     </PaginationContainer>
   );

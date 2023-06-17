@@ -40,7 +40,7 @@ const Create = () => {
         actions.resetForm();
       }
     },
-    [dispatch]
+    [dispatch, employeeId, history]
   );
 
   return (

@@ -29,6 +29,7 @@ const View = () => {
         marginTop="lg"
       >
         <Table
+          data-cy="employeeTable"
           columns={COLUMNS({ STATUS_COLORS, dispatch, history })}
           data={employeesRecords}
         />

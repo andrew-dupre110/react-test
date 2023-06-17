@@ -33,7 +33,7 @@ const StyledTable = styled.table`
   th {
     border: none;
     border-bottom: 1px solid ${theme.colors.lightGray};
-    min-width: 150px;
+    width: minmax(150px);
   }
 
   td {
@@ -56,6 +56,8 @@ const NoData = styled.div`
 `;
 
 const Table = ({ columns, data }) => {
+  const PAGE_SIZES = [5, 15, 25];
+
   const [pagination, setPagination] = useState({
     currentPage: 1,
     recordsPerPage: 5,
@@ -122,6 +124,7 @@ const Table = ({ columns, data }) => {
         pagination={pagination}
         setPagination={setPagination}
         listToatal={data.length}
+        pageSizes={PAGE_SIZES}
       />
     </TableContainer>
   );
