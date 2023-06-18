@@ -24,6 +24,18 @@ const Button = styled.button`
     opacity: 0.7;
   }
 
+  ${({ cardBtn }) =>
+    cardBtn &&
+    `
+    height:200px;
+    width:200px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    gap:2rem
+  `}
+
   ${({ link }) =>
     link &&
     `

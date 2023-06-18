@@ -30,7 +30,7 @@ const FormField = ({ name, placeholder, type = "text", options }) => {
       case "date":
         return (
           <TextField
-            type="date"
+            type="text"
             data-cy={`${name}Input`}
             fontSize="lg"
             placeholder={placeholder}

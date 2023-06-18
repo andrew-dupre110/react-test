@@ -1,11 +1,12 @@
 import React from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import { deleteEmployee } from "../../redux/employees";
 import { Button, Flex } from "../styled";
 import Tag from "../styled/Tag";
 import theme from "../styled/defaultTheme";
 
-const COLUMNS = ({ STATUS_COLORS, dispatch, history }) => [
+const COLUMNS = ({ STATUS_COLORS, dispatch }) => [
   {
     label: "First name",
     dataIndex: "firstName",
@@ -42,13 +43,16 @@ const COLUMNS = ({ STATUS_COLORS, dispatch, history }) => [
         justifyContent="center"
         gap="2rem"
       >
+        <Link data-cy="editButton" to={`/employee/edit/${id}`}>
+          <Button linkWithIcon>
+            <AiFillEdit fontSize={24} />
+          </Button>
+        </Link>
         <Button
+          data-cy="deleteButton"
           linkWithIcon
-          onClick={() => history.push(`/employee/edit/${id}`)}
+          onClick={() => dispatch(deleteEmployee(id))}
         >
-          <AiFillEdit fontSize={24} />
-        </Button>
-        <Button linkWithIcon onClick={() => dispatch(deleteEmployee(id))}>
           <AiFillDelete fontSize={24} color={theme.colors.danger} />
         </Button>
       </Flex>
