@@ -34,7 +34,7 @@ const View = () => {
           data={employeesRecords}
         />
         <Box>
-          <Button data-cy="backButton" onClick={() => history.goBack()}>
+          <Button data-cy="backButton" onClick={() => history.push("/")}>
             Back
           </Button>
         </Box>
