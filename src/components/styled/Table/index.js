@@ -91,7 +91,7 @@ const Table = ({ columns, data }) => {
                 {columns.map((dataColumn, dataColumnIndex) => (
                   <td key={dataColumnIndex}>
                     {dataColumnIndex === Math.floor(columns.length / 2) && (
-                      <NoData>
+                      <NoData data-cy="noData">
                         <FcDeleteDatabase fontSize={120} />
                         <h1>No data to display</h1>
                       </NoData>

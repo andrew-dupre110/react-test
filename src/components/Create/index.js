@@ -45,7 +45,9 @@ const Create = () => {
 
   return (
     <>
-      <Header>{employeeId ? "Edit employee" : "Create new employee"}</Header>
+      <Header data-cy="header">
+        {employeeId ? "Edit employee" : "Create new employee"}
+      </Header>
       <Formik
         validationSchema={formValidationSchema}
         onSubmit={submitForm}

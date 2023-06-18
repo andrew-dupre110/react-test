@@ -43,12 +43,16 @@ const COLUMNS = ({ STATUS_COLORS, dispatch }) => [
         justifyContent="center"
         gap="2rem"
       >
-        <Link to={`/employee/edit/${id}`}>
+        <Link data-cy="editButton" to={`/employee/edit/${id}`}>
           <Button linkWithIcon>
             <AiFillEdit fontSize={24} />
           </Button>
         </Link>
-        <Button linkWithIcon onClick={() => dispatch(deleteEmployee(id))}>
+        <Button
+          data-cy="deleteButton"
+          linkWithIcon
+          onClick={() => dispatch(deleteEmployee(id))}
+        >
           <AiFillDelete fontSize={24} color={theme.colors.danger} />
         </Button>
       </Flex>
